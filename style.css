@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+main{
+    width: 90%;
+    margin: auto;
+}
+
+.header{
+    width: 100%;
+    height: 500px;
+    background-image: url('img/desktop/image-hero.jpg');
+    background-size: cover;
+}
+
+.navbar{
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.5rem 2rem;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item{
+    margin-left: 1rem;
+}
+
+.nav-link{
+    color: white;
+    position: relative;
+}
+
+.nav-link::after{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transition: 0.3s ease-out;
+}
+
+.nav-link:hover::after, .nav-link:focus::after{
+    transform: scaleX(1);
+}
+
+.hamburger{
+    display: none;
+}
+
+.logo{
+    z-index: 100;
+}
+
+.bar{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    display: block;
+    margin-top: 5px;
+    transition: 0.3s ease-out;
+}
+
+.content{
+    padding: 4rem 2rem;
+}
+.title{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.border{
+    width: 550px;
+    height: 250px;
+    border: 2px solid white;
+    color: white;
+    padding: 2.5rem;
+    font-size: 27px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+}
+
+.overlay{
+    width: 500px;
+    height: 300px;
+    position: relative;
+}
+
+.box{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.slack{
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    margin: 100px 400px;
+    padding: 5rem;
+}
+
+.slack .title{
+    text-transform: uppercase;
+    font-size: 35px;
+}
+
+.slack .subtitle{
+    margin-top: 15px;
+    width: 100%;
+    font-size: 15px;
+}
+
+.box img{
+    width: 100%;
+}
+
+.row{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.space-btw{
+    width: 96%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.see-all{
+    width: 150px;
+    height: 40px;
+    border-radius: 3px;
+    border: 2px solid black;
+    background-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s ease-out;
+}
+
+
+.see-all:hover{
+    background-color: black;
+    color: white;
+}
+
+.row-boxes{
+    width: 100%;
+    margin: 2px;
+}
+.row-box{
+    margin: 23px auto;
+    position: relative;
+    transition: 0.3s ease-out;
+}
+
+.over-text{
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    font-size: 25px;
+    color: white;
+    padding: 1.8rem;
+}
+
+.row-box img{
+    width: 100%;
+}
+
+.row-box:hover{
+    opacity: 0.7;
+}
+
+.footer{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    flex-direction: column;
+}
+
+.item{
+    margin: 15px;
+}
+
+.item img{
+    cursor: pointer;
+}
+
+.cc{
+    color: hsl(0, 0%, 55%);
+}
+
+.author{
+    font-size: 15px;
+    color: white;
+    margin-top: 15px;
+}
+
+.author a{
+    color: royalblue;
+}
+
+@media (max-width: 768px){
+    .header{
+        background-image: url('img/mobile/image-hero.jpg');
+    }
+    .border{
+        width: 100%;
+        height: 250px;
+        margin: 15px 0;
+        font-size: 16px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 15px;
+    }
+    .content{
+        margin: 0;
+    }
+    .menu{
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: 99;
+        transition: 0.3s ease-out;
+    }
+    .active{
+        left: 0;
+    }
+    .navbar{
+        flex-direction: unset;
+    }
+    .items{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        height: 150px;
+        margin: 10px 0;
+        flex-direction: column;
+        font-size: 25px;
+        text-transform: uppercase;
+    }
+    .nav-item{
+        margin: 15px 0;
+    }
+    .hamburger{
+        display: block;
+        z-index: 99;
+        cursor: pointer;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px)rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px)rotate(-45deg);
+    }
+    .space-btw{
+        flex-direction: column;
+        text-align: center;
+    }
+    .see-all{
+        width: 250px;
+    }
+}
+
+@media (max-width: 1000px){
+    .overlay{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .box{
+        position: unset;
+        margin: 0;
+        padding: 0;
+    }
+    .slack{
+        width: 100%;
+        text-align: left;
+        margin-top: 100px;
+        position: relative;
+    }
+    .subtitle{
+        width: 50%;
+        font-size: 10px;
+    }
+    .row-boxes{
+        margin: auto;
+    }
+    .row-box{
+        margin: auto;
+    }
+    .footer{
+        flex-direction: column;
+        height: 100%;
+        text-align: center;
+    }
+    .author{
+        font-size: 10px;
+    }
+}
